@@ -11,10 +11,15 @@ public class PipesSpawner : MonoBehaviour
     [SerializeField] float height;
 
     private int pipeNum = 0;
-    private Coroutine spawnPipesCorontine;
+    private Coroutine spawnPipesCoroutine;
 
     // Start is called before the first frame update
-    IEnumerator Start()
+    void Start()
+    {
+        
+    }
+
+    IEnumerator SpawnPipes()
     {
         while (true)
         {
@@ -29,6 +34,11 @@ public class PipesSpawner : MonoBehaviour
             yield return new WaitForSeconds(timeToSpawn);
             pipeNum = 1 - pipeNum;
         }
+    }
+
+    public void StartSpawning()
+    {
+        spawnPipesCoroutine = StartCoroutine(SpawnPipes());
     }
 
     private void CreateAndMove(GameObject pipe)
