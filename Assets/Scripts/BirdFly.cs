@@ -25,9 +25,14 @@ public class BirdFly : MonoBehaviour
             FindObjectOfType<PipesSpawner>().StartSpawning();
             rb.velocity = Vector2.up * velocity;
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && transform.position.y < 1.1f)
         { 
             rb.velocity = Vector2.up * velocity;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        FindObjectOfType<Manager>().RestartGame();
     }
 }
