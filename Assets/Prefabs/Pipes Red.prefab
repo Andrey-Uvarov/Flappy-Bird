@@ -70,6 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57474b2e03595a41b13bb04e876375e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  addScoreSound: {fileID: 8300000, guid: 7b96fc5caf7cff647bfd1089a93e44a4, type: 3}
+  addScoreSoundVolume: 0.3
 --- !u!1 &6932062837308751004
 GameObject:
   m_ObjectHideFlags: 0
