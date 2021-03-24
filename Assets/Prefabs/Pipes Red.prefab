@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7073035741820746009}
   - component: {fileID: 3837031827502627591}
+  - component: {fileID: 8966644389721047263}
   m_Layer: 0
   m_Name: ScoreElement
   m_TagString: Untagged
@@ -41,7 +42,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.003772974, y: -0.0070033073}
@@ -57,6 +58,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17237163, y: 0.64282227}
   m_EdgeRadius: 0
+--- !u!114 &8966644389721047263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6284499791002550414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57474b2e03595a41b13bb04e876375e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addScoreSound: {fileID: 8300000, guid: 7b96fc5caf7cff647bfd1089a93e44a4, type: 3}
+  addScoreSoundVolume: 0.3
 --- !u!1 &6932062837308751004
 GameObject:
   m_ObjectHideFlags: 0

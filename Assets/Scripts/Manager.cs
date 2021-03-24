@@ -5,10 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
+
+    [SerializeField] GameObject[] gameOverComponents;
+    [SerializeField] GameObject[] startGameComponents;
+    [SerializeField] GameObject scoreObject;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1; //Возобление игры после паузы
+        DisableUIComponents(gameOverComponents);
+        EnableUIComponents(startGameComponents);
+        scoreObject.SetActive(false);
+    }
+
+    public void EnableScore()
+    {
+        scoreObject.SetActive(true);
+    }
+
+    public void DisableStartUI()
+    {
+        DisableUIComponents(startGameComponents);
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        EnableUIComponents(gameOverComponents);
+        DisableUIComponents(startGameComponents);
     }
 
     // Update is called once per frame
@@ -17,9 +42,19 @@ public class Manager : MonoBehaviour
         
     }
 
-    public void RestartGame()
+    private void DisableUIComponents(GameObject[] objectsToDisable)
     {
-        SceneManager.LoadScene(0);
+        foreach (GameObject obj in objectsToDisable)
+        {
+            obj.SetActive(false);
+        }
+    }
+    private void EnableUIComponents(GameObject[] objectsToEnable)
+    {
+        foreach (GameObject obj in objectsToEnable)
+        {
+            obj.SetActive(true);
+        }
     }
 
 }
